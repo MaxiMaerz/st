@@ -21,10 +21,10 @@ config.h:
 .c.o:
 	$(CC) $(STCFLAGS) -c $<
 
-st.o: config.h st.h win.h
-x.o: arg.h config.h st.h win.h
+st.o: config.def.h st.h win.h
+x.o: arg.h config.def.h st.h win.h
 
-$(OBJ): config.h config.mk
+$(OBJ): config.def.h config.mk
 
 st: $(OBJ)
 	$(CC) -o $@ $(OBJ) $(STLDFLAGS)
